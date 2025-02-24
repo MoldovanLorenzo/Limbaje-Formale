@@ -84,3 +84,42 @@ class DetectareCat:
 
 
 #ex3
+class DFA:
+    def __init__(self):
+        self.states = {"q0", "q1", "q2", "q3"}
+        self.alphabet = {'a', 'b', 'c', 'd'}  
+        self.initial_state = "q0" 
+        self.final_state = "q3" 
+        self.transitions = { 
+            ("q0", "a"): "q1", ("q0", "b"): "q1", ("q0", "c"): "q1", ("q0", "d"): "q1",
+            ("q1", "a"): "q1", ("q1", "b"): "q2", ("q1", "c"): "q2", ("q1", "d"): "q2",
+            ("q2", "a"): "q2", ("q2", "b"): "q2", ("q2", "c"): "q3", ("q2", "d"): "q3",
+            ("q3", "a"): "q3", ("q3", "b"): "q3", ("q3", "c"): "q3", ("q3", "d"): "q3"
+        }
+
+    def process_word(self, word):
+
+        if len(word) > 6: 
+            return False
+        
+        state = self.initial_state
+        double_count = 0
+        
+        i = 0
+        while i < len(word) - 1:
+            if word[i] == word[i + 1]:
+                double_count += 1
+                i += 2 
+            else:
+                i += 1
+        
+        return double_count == 3
+
+
+dfa = DFA()
+
+test_words = ["aabbcc", "abcd", "aab", "aabbccd", "aaabbb", "bbaacc"]
+
+for word in test_words:
+    result = dfa.process_word(word)
+    print(f"Cuvântul '{word}' este {'ACCEPTAT' if result else 'RESPINS'}")
