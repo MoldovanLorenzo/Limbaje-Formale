@@ -115,11 +115,3 @@ class DFA:
         
         return double_count == 3
 
-
-dfa = DFA()
-
-test_words = ["aabbcc", "abcd", "aab", "aabbccd", "aaabbb", "bbaacc"]
-
-for word in test_words:
-    result = dfa.process_word(word)
-    print(f"Cuvântul '{word}' este {'ACCEPTAT' if result else 'RESPINS'}")
