@@ -20,7 +20,7 @@ class ParkingLot:
             self.available_spots += 1
             print(f"Masina plecata de la locul {spot}.")
         else:
-            print("Loc invalid sau deja liber!")
+            print("Loc invalid sau deja liber")
 
     def display_status(self):
         print(f"Locuri disponibile: {self.available_spots}/{self.capacity}")
