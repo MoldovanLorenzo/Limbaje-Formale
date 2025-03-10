@@ -23,5 +23,5 @@ machine = MealyMachine()
 input_sequence = ["X", "Y", "X", "X", "Y"]
 output_sequence = machine.process_input(input_sequence)
 
-print("Input Sequence: ", input_sequence)
-print("Output Sequence:", output_sequence)
+print("Input : ", input_sequence)
+print("Output :", output_sequence)
