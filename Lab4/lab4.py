@@ -28,5 +28,5 @@ machine = MooreMachine()
 input_sequence = ["A", "B", "B", "A", "A", "B"]
 output_sequence = machine.process_input(input_sequence)
 
-print("Input Sequence: ", input_sequence)
-print("Output Sequence:", output_sequence)
+print("Input : ", input_sequence)
+print("Output :", output_sequence)
