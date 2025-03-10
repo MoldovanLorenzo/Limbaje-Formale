@@ -12,7 +12,7 @@ class ParkingLot:
                     self.available_spots -= 1
                     print(f"Masina parcata la locul {i + 1}.")
                     return
-        print("Parcarea este plina!")
+        print("Parcarea este plina")
 
     def leave_parking(self, spot):
         if 1 <= spot <= self.capacity and self.parking_state[spot - 1] == 1:
